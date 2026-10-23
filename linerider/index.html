@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>linerider</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; background: #000; color: #888; overflow: hidden; }
+  body { display: grid; place-items: center; font: 14px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+  /* 320×200 on a 4:3 screen, as the intro was made for */
+  canvas {
+    grid-area: 1 / 1; width: min(100vw, 133.333vh); aspect-ratio: 4 / 3;
+    image-rendering: pixelated; background: #000;
+  }
+  button {
+    grid-area: 1 / 1; z-index: 1; font: inherit; color: #ccc; background: none;
+    border: 1px solid #444; padding: 0.6em 1.2em; cursor: pointer;
+  }
+  button:hover, button:focus-visible { color: #fff; border-color: #888; outline: none; }
+  button:disabled { cursor: default; border-color: transparent; }
+</style>
+</head>
+<body>
+<canvas width="320" height="200"></canvas>
+<button disabled>loading…</button>
+<script src="emulators.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
